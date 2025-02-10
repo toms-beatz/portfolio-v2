@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Sidebar() {
     return (
         <section
-            className="flex flex-col sticky top-14 lg:items-center max-h-full h-full mb-0 lg:pt-14 lg:pb-7 lg:px-7 p-7 bg-dark-2 rounded-2xl lg:max-w-[275px] sm:w-full border-border border">
+            className="flex flex-col lg:sticky top-14 lg:items-center max-h-full h-full mb-0 lg:pt-14 lg:pb-7 lg:px-7 p-7 bg-dark-2 rounded-2xl lg:max-w-[275px] md:w-max border-border border">
             <div className="flex lg:justify-center lg:flex-col lg:items-center gap-8">
                 <div className="flex flex-col items-center justify-center bg-dark-3 rounded-[30px] w-32 h-32">
                     <Image src="/my-avatar.png" alt="my-avatar" width={150} height={150}/>
@@ -16,7 +16,8 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="mt-6 py-12 flex lg:flex-col border-t border-border lg:border-b-0 border-b lg:w-auto w-full gap-8 flex-wrap">
+            <div
+                className="mt-6 py-12 flex lg:flex-col border-t border-border lg:border-b-0 border-b lg:w-auto w-full gap-8 flex-wrap">
                 <div className="flex flex-col gap-8">
                     <div className="flex items-center gap-4">
                         <div
@@ -67,8 +68,9 @@ export default function Sidebar() {
             <div className="flex mt-8 gap-4">
                 <Link target="_blank" href="https://github.com/toms-beatz"><Github width={18} height={18}
                                                                                    className="text-lightgrey"/></Link>
-                <Link target="_blank" href="https://www.linkedin.com/in/thomas-mazeau-611481204"><Linkedin
-                    width={18} height={18} className="text-lightgrey"/></Link>
+                <Link target="_blank" href="https://www.linkedin.com/in/thomas-mazeau-611481204"><Linkedin width={18}
+                                                                                                           height={18}
+                                                                                                           className="text-lightgrey"/></Link>
             </div>
         </section>
     );

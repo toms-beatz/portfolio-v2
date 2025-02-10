@@ -16,6 +16,7 @@ export default {
           2 : "#1e1e1f",
           3 : "#373737",
           4 : "#2b2b2c",
+          5 : "#2b2b2cbf",
         },
         lightgrey : "#d6d6d6b3",
       },
