@@ -6,7 +6,7 @@ import Contact from "./tabs/Contact";
 
 export default function TabContent({ activeTab }: { activeTab: string }) {
     return (
-        <div className="p-6 mt-20">
+        <div className="py-6 mt-6">
             {activeTab === "About" && <About />}
             {activeTab === "Resume" && <Resume />}
             {activeTab === "Contact" && <Contact />}
