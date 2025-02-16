@@ -5,6 +5,7 @@ import TabContent from "../components/TabContent";
 import Sidebar from "../components/Sidebar";
 import MobileNav from "../components/MobileNav";
 
+
 const navItems = [
     { id: "About", title: "Présentation" },
     { id: "Resume", title: "Parcours" },

@@ -18,13 +18,8 @@ export default function About() {
             <div>
                 <div className="text-gray-300 flex flex-col gap-4">
                     <p>
-                        Développeur Fullstack, je conçois des applications web et mobile performantes avec React,
-                        Next.js, Node.js, PHP (Laravel, Symfony) et React Native.
-                    </p>
-                    <p>
-                        Passionné par l’optimisation et l’expérience utilisateur,
-                        je transforme les idées en solutions concrètes et intuitives. Toujours
-                        curieux et en quête de nouveaux défis, j’aime créer des produits innovants et efficaces.
+                        Développeur Fullstack, passionné par l’optimisation et l’expérience utilisateur,
+                        je transforme les idées en solutions concrètes et intuitives. Toujours en quête de nouveaux défis, j’aime créer des produits innovants et efficaces.
                     </p>
                 </div>
             </div>
