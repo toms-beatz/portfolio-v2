@@ -6,7 +6,6 @@ import {
     GraduationCap, MessageCircleQuestion,
     Puzzle,
     Smile,
-    TabletSmartphone,
     Trophy,
     Users,
     Wrench
