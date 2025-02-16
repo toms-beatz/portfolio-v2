@@ -56,7 +56,7 @@ export default function Contact() {
                 <textarea
                     placeholder="Message"
                     className="w-full px-5 py-4 rounded-xl bg-transparent text-white border border-border focus-visible:ring-0 focus-visible:ring-offest-0"
-                    rows={4}
+                    rows={10}
                     {...register('message', {required: true})}
                 />
                 <div className="flex justify-end">

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Cake, ChevronDown, ChevronUp, Github, Linkedin, Mail, MapPin, Smartphone} from "lucide-react";
+import {Cake, Github, Linkedin, Mail, MapPin, Minus, Plus, Smartphone} from "lucide-react";
 import Link from "next/link";
 import {useState} from "react";
 
@@ -27,7 +27,13 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                     onClick={handleDropdownToggle}
                     className="lg:hidden absolute top-0 right-0 flex items-center justify-center p-1 rounded-bl-2xl rounded-tr-2xl border border-border bg-dark-3 text-lightgrey"
                 >
-                    {isDropdownVisible ? <ChevronUp className="text-primary"/> : <ChevronDown className="text-primary"/>}
+                    {isDropdownVisible ?
+                        //<ChevronUp className="text-primary"/>
+                        <Minus className="text-primary"/>
+                        :
+                        //<ChevronDown className="text-primary"/>
+                        <Plus className="text-primary"/>
+                    }
                 </button>
                 <div className="flex lg:justify-center lg:flex-col lg:items-center gap-8">
                     <div
@@ -36,7 +42,8 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                     </div>
                     <div className="flex flex-col lg:items-center justify-center">
                         <h1 className="md:text-2xl text-lg font-semibold my-4 text-white">Thomas Mazeau</h1>
-                        <p className="bg-primary/40 text-white px-4 rounded-lg py-1 text-xs md:text-sm w-fit">Développeur Fullstack</p>
+                        <p className="bg-primary/40 text-white px-4 rounded-lg py-1 text-xs md:text-sm w-fit">Développeur
+                            Fullstack</p>
                     </div>
                 </div>
 
@@ -61,7 +68,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                                 <Smartphone height={18} width={18} className="text-primary"/>
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <h2 className="text-xs text-lightgrey">PHONE</h2>
+                                <h2 className="text-xs text-lightgrey">TÉLÉPHONE</h2>
                                 <Link href="tel:0615945951"><p className="text-sm text-white">+33 6 15 94 59 51</p>
                                 </Link>
                             </div>
@@ -75,7 +82,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                             </div>
                             <div className="flex flex-col gap-0.5">
                                 <h2 className="text-xs text-lightgrey">BIRTHDAY</h2>
-                                <p className="text-sm text-white">9 septembre 2001</p>
+                                <p className="text-sm text-white">9 septembre 2001 (23 ans)</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -84,7 +91,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                                 <MapPin height={18} width={18} className="text-primary"/>
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <h2 className="text-xs text-lightgrey">LOCATION</h2>
+                                <h2 className="text-xs text-lightgrey">LOCALISATION</h2>
                                 <p className="text-sm text-white">Nice, France</p>
                             </div>
                         </div>
