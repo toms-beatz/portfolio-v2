@@ -8,7 +8,7 @@ const navItems = [
 export default function Navbar({ activeTab, setActiveTab }: { activeTab: string; setActiveTab: (tab: string) => void }) {
     return (
         <nav
-            className="h-16 bg-dark-5 px-5 rounded-bl-3xl rounded-tr-2xl border-l border-b border-border mb-4 absolute top-0 bottom-auto left-auto right-0 lg:flex hidden items-center w-max"
+            className="h-16 bg-dark-5 px-5 rounded-bl-3xl rounded-tr-2xl border-l border-b border-border mb-4 absolute top-0 bottom-auto left-auto right-0 xl:flex hidden items-center w-max"
         >
             <ul className="flex gap-12 px-5">
                 {navItems.map((item) => (
