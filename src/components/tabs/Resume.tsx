@@ -218,9 +218,9 @@ export default function Resume() {
 
             <div className="flex flex-col gap-4 my-12">
                 <h2 className="text-2xl font-bold text-white">Soft Skills</h2>
-                <div className="grid xl:grid-cols-3 gap-y-8 gap-x-6">
+                <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-y-8 gap-x-6">
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <Brain height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
@@ -229,7 +229,7 @@ export default function Resume() {
                         </div>
                     </div>
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <Users height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
@@ -238,7 +238,7 @@ export default function Resume() {
                         </div>
                     </div>
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <Smile height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
@@ -247,7 +247,7 @@ export default function Resume() {
                         </div>
                     </div>
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <Wrench height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
@@ -256,7 +256,7 @@ export default function Resume() {
                         </div>
                     </div>
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <Puzzle height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
@@ -265,7 +265,7 @@ export default function Resume() {
                         </div>
                     </div>
                     <div
-                        className="flex flex-row gap-6 lg:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
+                        className="flex flex-row gap-6 xl:justify-center items-center p-4 bg-[linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)] [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
                         <MessageCircleQuestion height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
