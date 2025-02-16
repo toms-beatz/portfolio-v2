@@ -12,7 +12,7 @@ import {
     DialogTrigger,
     DialogClose,
 } from "@/components/ui/dialog"
-import {Eye, CircleX, X} from "lucide-react";
+import {Eye, X} from "lucide-react";
 
 // Define the structure of the project data
 interface Project {

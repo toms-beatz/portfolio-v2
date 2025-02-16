@@ -24,7 +24,6 @@ export async function POST(request: NextRequest) {
             },
         });
 
-        const capName = name.charAt(0).toUpperCase() + name.slice(1);
         // Mail options
         const mailOptions: Mail.Options = {
             from: 'Portfolio',
@@ -46,8 +45,8 @@ export async function POST(request: NextRequest) {
 
         // Success response
         return NextResponse.json({ message: 'Email sent successfully' });
-    } catch (error: any) {
-        console.error('Error sending email:', error.message);
+    } catch (error) {
+        console.error('Error sending email:', (error as Error).message);
 
         // Error response
         return NextResponse.json(

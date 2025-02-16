@@ -32,7 +32,7 @@ export default function Resume() {
                             <div
                                 className="after:content-[''] after:absolute after:top-[18px] after:-left-[43.5px] after:h-[6px] after:w-[6px] after:bg-primary after:rounded-[50%] after:[box-shadow:0_0_0_4px_#373737]"></div>
                             <h3 className="text-lg font-bold text-white">Titre RNCP Concepteur Développeur
-                                d'Applications
+                                d&apos;Applications
                                 | <span className="text-lightgrey">MyDigitalSchool Nice</span></h3>
                             <span className="text-md font-medium text-primary">2024</span>
                             <span className="text-white font-light text-md flex flex-col gap-2">
@@ -62,7 +62,7 @@ export default function Resume() {
                         <div className="relative mt-4 gap-2 flex flex-col">
                             <div
                                 className="after:content-[''] after:absolute after:top-[18px] after:-left-[43.5px] after:h-[6px] after:w-[6px] after:bg-primary after:rounded-[50%] after:[box-shadow:0_0_0_4px_#373737]"></div>
-                            <h3 className="text-lg font-bold text-white">DEUST Webmaster & Métiers de l'Internet | <span
+                            <h3 className="text-lg font-bold text-white">DEUST Webmaster & Métiers de l&apos;Internet | <span
                                 className="text-lightgrey">Université de Limoges</span></h3>
                             <span className="text-md font-medium text-primary">2023</span>
                             <span className="text-white font-light text-md flex flex-col gap-2">
@@ -96,7 +96,7 @@ export default function Resume() {
                             <p className="font-semibold">Mention Européenne Anglais</p>
                             <p className="">
                                 Projet tuteuré (TPE) : Découverte de
-                                l'HTML/CSS via le développement d'un
+                                l&apos;HTML/CSS via le développement d&apos;un
                                 widget météo pour un miroir connecté
                             </p>
                         </span>
@@ -146,7 +146,7 @@ export default function Resume() {
                             <span className="text-md font-medium text-primary">2021</span>
                             <span className="text-white font-light text-md flex flex-col gap-2">
                                 <p>
-                                    Développement d'une carte interactive via API Google Maps dans le cadre d'un recrutement
+                                    Développement d&apos;une carte interactive via API Google Maps dans le cadre d&apos;un recrutement
                                 </p>
                             </span>
                         </div>
@@ -158,7 +158,7 @@ export default function Resume() {
                             <span className="text-md font-medium text-primary">2021</span>
                             <span className="text-white font-light text-md flex flex-col gap-2">
                                 <p className="">
-                                    Intégration d'une maquette sur WordPress
+                                    Intégration d&apos;une maquette sur WordPress
                                 </p>
                                 <p>
                                     Développement de fonctionnalités en JavaScript et PHP
@@ -225,7 +225,7 @@ export default function Resume() {
                         <Brain height={50} width={50} className="text-primary w-1/4"/>
                         <div className="flex flex-col gap-2">
                             <h3 className="text-primary font-semibold">
-                                Vivacité d'esprit
+                                Vivacité d&apos;esprit
                             </h3>
                         </div>
                     </div>

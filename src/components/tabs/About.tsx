@@ -115,9 +115,7 @@ export default function About() {
                                     Quentin Wavelet
                                 </h3>
                                 <span className=" text-white !text-left text-sm">
-                                    « Thomas a brillamment atteint les objectifs fixés en amont.
-                                        Il a parfaitement su s'adapter au fonctionnement quelque peu différent
-                                        de notre association. »<br/><br/>
+                                    « Thomas a brillamment atteint les objectifs fixés en amont. Il a parfaitement su s&apos;adapter au fonctionnement quelque peu différent de notre association. »<br/><br/>
                                 </span>
                             </span>
                         </DialogTrigger>
@@ -134,7 +132,7 @@ export default function About() {
                                 <DialogDescription className="!mt-6">
                                     <span className="text-white !text-left md:text-base text-sm">
                                         « Thomas a brillamment atteint les objectifs fixés en amont.
-                                        Il a parfaitement su s'adapter au fonctionnement quelque peu différent
+                                        Il a parfaitement su s&apos;adapter au fonctionnement quelque peu différent
                                         de notre association. »
                                     </span>
                                 </DialogDescription>
