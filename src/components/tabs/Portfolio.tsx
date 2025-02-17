@@ -96,7 +96,7 @@ export default function Project() {
                         <Dialog key={project.title}>
                             <DialogTrigger>
                                 <div className="group relative w-full flex flex-col">
-                                    <div className="relative overflow-hidden rounded-2xl">
+                                    <div className="relative overflow-hidden rounded-2xl border dark:border-0 border-light-3">
                                         <div
                                             className="z-10 absolute inset-0 flex justify-center items-center group-hover:bg-dark-4/30 rounded-2xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
                                             <div
@@ -109,35 +109,35 @@ export default function Project() {
                                             alt={project.title}
                                             width={250}
                                             height={50}
-                                            className="rounded-2xl w-full h-48 object-cover bg-dark-3 transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                            className="rounded-2xl w-full h-48 object-cover bg-white dark:bg-dark-3 transform transition-transform duration-500 ease-in-out group-hover:scale-110"
                                         />
                                     </div>
                                     <div
                                         className="py-3 px-2 flex flex-col justify-start items-start transition-colors duration-300 ease-in-out rounded-b-2xl">
-                                        <h2 className="text-md font-semibold text-white">{project.title}</h2>
-                                        <p className="text-lightgrey">{project.year}</p>
+                                        <h2 className="text-md font-semibold text-light-4 dark:text-white">{project.title}</h2>
+                                        <p className="text-light-4 dark:text-lightgrey">{project.year}</p>
                                     </div>
                                 </div>
                             </DialogTrigger>
-                            <DialogContent className="bg-dark-2 border-0 md:w-full w-10/12 !rounded-3xl p-0 pb-12 [&>button]:hidden">
+                            <DialogContent className="bg-light-1 dark:bg-dark-2 border-0 md:w-full w-10/12 !rounded-3xl p-0 pb-12 [&>button]:hidden">
                                 <DialogHeader className="">
                                     <DialogDescription className="flex flex-col justify-center gap-4">
 
                                         <Image src={project.img} alt={project.title} width={250} height={50}
-                                               className="rounded-3xl w-full object-cover rounded-b-3xl"/>
+                                               className="rounded-3xl w-full object-cover rounded-b-3xl dark:border-0 border border-light-3"/>
 
-                                        <div className="flex flex-col gap-8 items-start px-4">
+                                        <span className="flex flex-col gap-8 items-start px-4">
                                             <DialogTitle className="text-primary text-xl">{project.title}</DialogTitle>
                                             <DialogDescription className="">
-                                                <span className="text-white !text-left md:text-base text-sm">
+                                                <span className="text-light-4 dark:text-white !text-left md:text-base text-sm">
                                                     {project.desc}
                                                 </span>
                                             </DialogDescription>
-                                        </div>
+                                        </span>
                                     </DialogDescription>
                                 </DialogHeader>
                                 <DialogClose asChild className="absolute top-2 right-2">
-                                    <X className="text-white w-6 h-6 cursor-pointer backdrop-blur-lg rounded-lg"/>
+                                    <X className="text-light-3 w-6 h-6 cursor-pointer backdrop-blur-lg rounded-lg border"/>
                                 </DialogClose>
                             </DialogContent>
 

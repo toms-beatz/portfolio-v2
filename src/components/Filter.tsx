@@ -23,7 +23,7 @@ const Filter: React.FC<FilterProps> = ({tagList, activeTag, handleTag}) => {
                             "py-2 cursor-pointer transition-all",
                             activeTag === tag
                                 ? "text-primary font-medium"
-                                : "text-white font-medium"
+                                : "text-light-4 dark:text-white font-medium"
                         )}
                     >
                         {tag}
@@ -35,10 +35,11 @@ const Filter: React.FC<FilterProps> = ({tagList, activeTag, handleTag}) => {
                 {/* Select Input */}
                 <select
                     value={activeTag}
+                    autoFocus={false}
                     onChange={(e) => handleTag(e.target.value)}
                     onFocus={() => setIsOpen(true)} // Dropdown open
                     onBlur={() => setIsOpen(false)} // Dropdown close
-                    className="w-full px-5 py-4 rounded-xl bg-transparent text-white border border-border focus-visible:ring-0 focus-visible:ring-offest-0"
+                    className="w-full px-5 py-4 rounded-xl bg-transparent text-light-4 dark:text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offest-0"
                 >
                     {tagList.map((tag) => (
                         <option key={tag} value={tag}>

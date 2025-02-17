@@ -12,6 +12,8 @@ body {
   }
 }
 
-.lucide-x {
-  color: white;
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
