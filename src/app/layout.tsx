@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Freeman } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const freeman: Freeman = ({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-freeman'
 });
 
 export const metadata: Metadata = {
@@ -23,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={freeman.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-dark-1 bg-light-1`}
+        className={`antialiased dark:bg-dark-1 bg-light-1`}
       >
         {children}
       </body>

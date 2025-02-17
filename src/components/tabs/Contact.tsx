@@ -21,8 +21,8 @@ export default function Contact() {
     return (
         <div>
             <p className="text-light-4 dark:text-white xl:mb-12 mb-8">
-                Vous avez un <b>projet</b>, une <b>idée</b>, une <b>opportunité</b> ou simplement une question ? 🚀<br/><br/>
-                N’hésitez pas à me contacter via le formulaire ci-dessous ou <Link href="https://www.linkedin.com/in/thomas-mazeau-611481204" target="_blank" className="text-primary">LinkedIn</Link>, je serais ravi d’échanger avec vous et de voir comment nous pouvons collaborer.
+                Vous avez un <b className="text-light-5 dark:text-dark-5 font-semibold">projet</b>, une <b className="text-light-5 dark:text-dark-5 font-semibold">idée</b>, une <b className="text-light-5 dark:text-dark-5 font-semibold">opportunité</b> ou simplement une question ? 🚀<br/><br/>
+                N’hésitez pas à me contacter via le formulaire ci-dessous ou <Link href="https://www.linkedin.com/in/thomas-mazeau-611481204" target="_blank" className="font-semibold text-light-5 dark:text-dark-5">LinkedIn</Link>, je serais ravi d’échanger avec vous et de voir comment nous pouvons collaborer.
                 À très bientôt !
             </p>
             <form className="md:space-y-8 space-y-4" onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +35,7 @@ export default function Contact() {
                         autoCapitalize="off"
                         spellCheck="false"
                         required
-                        className="!bg-light-1 dark:!bg-dark-4 w-full px-5 py-4 rounded-xl bg-transparent text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offest-0"
+                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent text-white focus-visible:ring-0 focus-visible:ring-offest-0"
                         {...register('name', {required: true})}
                     />
                     <input
@@ -48,21 +48,21 @@ export default function Contact() {
                         title="Please enter a valid email address"
                         required
                         inputMode="email"
-                        className="!bg-light-1 dark:!bg-dark-4 w-full px-5 py-4 rounded-xl bg-transparent text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offest-0"
+                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 focus-visible:ring-0 focus-visible:ring-offest-0"
                         {...register('email', {required: true})}
                     />
                 </div>
 
                 <textarea
                     placeholder="Message"
-                    className="!bg-light-1 dark:!bg-dark-4 w-full px-5 py-4 rounded-xl bg-transparent text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offest-0"
+                    className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 focus-visible:ring-0 focus-visible:ring-offest-0"
                     rows={10}
                     {...register('message', {required: true})}
                 />
                 <div className="flex justify-end">
                     <button
                         type="submit"
-                        className="bg-light-1 dark:bg-dark-4 text-primary px-5 py-4 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border dark:border-t dark:border-l dark:border-r-0 dark:border-b-0 border-light-3 dark:border-border flex gap-4 items-center font-semibold"
+                        className="bg-light-1 dark:bg-dark-1 text-light-4 dark:text-dark-3 px-5 py-4 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl flex gap-4 items-center font-semibold"
                     >
                         <Send height={18} width={18}/>
                         Envoyer

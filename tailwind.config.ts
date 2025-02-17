@@ -13,18 +13,18 @@ export default {
                 primary: '#78735d',
                 border: '#383838',
                 dark: {
-                    '1': '#121212',
-                    '2': '#1e1e1f',
-                    '3': '#373737',
-                    '4': '#2b2b2c',
-                    '5': '#2b2b2cbf'
+                    '1': '#070b18',
+                    '2': '#ffffff08',
+                    '3': '#879ce1',
+                    '4': '#1f3a91',
+                    '5': '#325ada'
                 },
                 light: {
-                    '1': '#F8F9FA',
-                    '2': '#FFFFFF',
-                    '3': '#DEE2E6',
-                    '4': '#212529',
-                    '5': '#495057',
+                    '1': '#e7ebf8',
+                    '2': '#ffffff',
+                    '3': '#1e3276',
+                    '4': '#6c87e0',
+                    '5': '#254ccb',
                 },
                 lightgrey: '#d6d6d6b3'
             },
@@ -33,7 +33,17 @@ export default {
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)'
             }
-        }
+        },
+
+        fontFamily: {
+            heading: ['var(--font-freeman)'],
+            body: 'Noto Traditional Nushu',
+        },
+        fontWeight: {
+            normal: '400',
+            semibold: '600',
+            bold: '700',
+        },
     },
     plugins: [require("tailwindcss-animate")],
 } satisfies Config;

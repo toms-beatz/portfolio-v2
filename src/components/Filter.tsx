@@ -19,10 +19,10 @@ const Filter: React.FC<FilterProps> = ({ tagList, activeTag, handleTag }) => {
                         key={tag}
                         onClick={() => handleTag(tag)}
                         className={clsx(
-                            "py-2 cursor-pointer transition-all",
+                            "py-2 cursor-pointer transition-all ",
                             activeTag === tag
-                                ? "text-primary font-medium"
-                                : "text-light-4 dark:text-white font-medium"
+                                ? "text-light-5 font-medium font-semibold"
+                                : "text-light-4 hover:text-light-5 dark:hover:text-dark-5 dark:text-white font-medium"
                         )}
                     >
                         {tag}

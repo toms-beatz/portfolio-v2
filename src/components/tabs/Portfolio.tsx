@@ -17,11 +17,11 @@ interface Project {
 }
 
 const typeColors: Record<string, string> = {
-    "Application Web": "bg-blue-500",
-    "Application Mobile": "bg-green-500",
-    "Application Desktop": "bg-purple-500",
-    "API": "bg-red-500",
-    "SaaS": "bg-teal-500",
+    "Application Web": "bg-light-3",
+    "Application Mobile": "bg-light-4",
+    "Application Desktop": "bg-light-5",
+    "API": "bg-dark-3",
+    "SaaS": "bg-dark-4",
 };
 
 export default function Project() {
@@ -83,10 +83,10 @@ export default function Project() {
                         <Dialog key={project.title}>
                             <DialogTrigger>
                                 <div className="group relative w-full flex flex-col">
-                                    <div className="relative overflow-hidden rounded-2xl border dark:border-0 border-light-3">
-                                        <div className="z-10 absolute inset-0 flex justify-center items-center group-hover:bg-dark-4/30 rounded-2xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                                            <div className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-dark-3 [box-shadow:-4px_8px_24px_hsla(0,_0%,_0%,_0.125)] before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl border-t border-l border-r-0 border-b-0 border-border">
-                                                <Eye className="text-primary w-8 h-8" />
+                                    <div className="relative overflow-hidden rounded-2xl border dark:border-0 border-lightgrey">
+                                        <div className="z-10 absolute inset-0 flex justify-center items-center group-hover:bg-light-5/30 dark:group-hover:bg-dark-5/30 rounded-2xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                            <div className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
+                                                <Eye className="text-light-4 dark:text-dark-4 w-8 h-8" />
                                             </div>
                                         </div>
                                         <Image
@@ -94,7 +94,7 @@ export default function Project() {
                                             alt={project.title}
                                             width={50}
                                             height={50}
-                                            className="rounded-2xl w-full h-48 object-cover bg-white dark:bg-dark-3 transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                            className="rounded-2xl w-full h-48 object-cover bg-light-4 dark:bg-dark-3 transform transition-transform duration-500 ease-in-out group-hover:scale-110"
                                         />
                                         <div className="flex gap-2 mt-2 absolute z-10 top-0 right-2 flex-wrap ml-4">
                                             {project.type.map((type) => (
@@ -105,11 +105,11 @@ export default function Project() {
                                         </div>
                                     </div>
                                     <div className="py-3 px-2 flex flex-col justify-start items-start transition-colors duration-300 ease-in-out rounded-b-2xl">
-                                        <h2 className="text-md font-semibold text-light-4 dark:text-white">{project.title}</h2>
+                                        <h2 className="text-md font-semibold text-light-3 dark:text-dark-3">{project.title}</h2>
                                     </div>
                                 </div>
                             </DialogTrigger>
-                            <DialogContent className="bg-light-1 dark:bg-dark-2 border-0 md:w-full w-10/12 !rounded-3xl p-0 pb-12 [&>button]:hidden">
+                            <DialogContent className="bg-light-3/50 dark:bg-dark-3/50 backdrop-blur-md border-0 md:w-full w-10/12 !rounded-3xl p-0 pb-12 [&>button]:hidden">
                                 <DialogHeader>
                                     <DialogDescription className="flex flex-col justify-center gap-4">
                                         <Image
@@ -117,7 +117,7 @@ export default function Project() {
                                             alt={project.title}
                                             width={250}
                                             height={50}
-                                            className="rounded-3xl w-full object-cover rounded-b-3xl dark:border-0 border border-light-3"
+                                            className="rounded-3xl w-full object-cover rounded-b-3xl"
                                         />
                                         <div className="flex gap-2 mt-2 absolute z-10 top-0 right-12 flex-wrap ml-4">
                                             {project.type.map((type) => (
@@ -126,10 +126,10 @@ export default function Project() {
                                                 </span>
                                             ))}
                                         </div>
-                                        <span className="flex flex-col gap-8 items-start px-4">
-                                            <DialogTitle className="text-primary text-xl">{project.title}</DialogTitle>
+                                        <span className="flex flex-col gap-8 items-start px-4 pt-8">
+                                            <DialogTitle className="text-light-4 dark:text-dark-3 text-2xl">{project.title}</DialogTitle>
                                             <DialogDescription>
-                                                <span className="text-light-4 dark:text-white !text-left md:text-base text-sm">
+                                                <span className="text-light-2 dark:text-white !text-left md:text-base text-sm">
                                                     {project.desc}
                                                 </span>
                                             </DialogDescription>

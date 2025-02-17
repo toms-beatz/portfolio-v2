@@ -22,11 +22,11 @@ export default function Home() {
         <>
             <main className="flex w-full lg:px-28 md:py-14 md:pb-24 xl:pb-4 -mt-10 px-3 md:gap-8 gap-[75px] lg:flex-row flex-col lg:justify-start justify-center lg:items-start items-center">
                 <Sidebar activeTab={activeTab} />
-                <section className="w-full dark:bg-dark-2 bg-light-2 border-light-3 rounded-2xl relative border dark:border-border p-4 md:p-8 max-h-full h-full md:mb-0 mb-20">
-                    <h2 className="md:text-3xl md:m-0 mt-2 text-2xl font-semibold text-light-4 dark:text-white">
+                <section className="w-full dark:bg-dark-2 bg-light-2 rounded-2xl relative p-4 md:p-8 max-h-full h-full md:mb-0 mb-20">
+                    <h2 className="font-heading md:text-3xl md:m-0 mt-2 text-2xl font-semibold text-light-3 dark:text-dark-3">
                         {activeTabData?.title}
                     </h2>
-                    <div className="bg-primary h-1 w-12 rounded mt-5"></div>
+                    <div className="dark:bg-dark-5 bg-light-5 h-1 w-12 rounded mt-5"></div>
                     <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
                     <TabContent activeTab={activeTab} />
                 </section>
