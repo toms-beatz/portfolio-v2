@@ -1,20 +1,25 @@
 const navItems = [
-    { id: "About", title: "Présentation" },
-    { id: "Resume", title: "Parcours" },
-    { id: "Portfolio", title: "Projets" },
-    { id: "Contact", title: "Contact" },
+    {id: "About", title: "Présentation"},
+    {id: "Resume", title: "Parcours"},
+    {id: "Portfolio", title: "Projets"},
+    {id: "Contact", title: "Contact"},
 ];
 
-export default function MobileNav({ activeTab, setActiveTab }: { activeTab: string; setActiveTab: (tab: string) => void }) {
+export default function MobileNav({activeTab, setActiveTab}: {
+    activeTab: string;
+    setActiveTab: (tab: string) => void
+}) {
     return (
-        <nav className="h-16 border border-light-3 dark:border-border rounded-t-2xl xl:hidden flex items-center justify-center fixed bottom-0 left-0 w-screen backdrop-blur-xl bg-light-2 dark:bg-dark-5">
-            <ul className="flex lg:gap-12 gap-8 px-5">
+        <nav
+            className="h-16 border border-light-3 dark:border-border rounded-t-2xl xl:hidden flex items-center w-full justify-center fixed bottom-0 left-0 backdrop-blur-xl bg-light-2 dark:bg-dark-5">
+
+            <ul className="flex lg:gap-12 sm:gap-8 gap-4 px-5 justy-center items-center">
                 {navItems.map((item) => (
                     <li key={item.id}>
                         <button
                             onClick={() => setActiveTab(item.id)}
                             className={`font-semibold transition-colors text-sm md:text-base ${
-                                activeTab === item.id ? "text-primary" : "text-gray-300 hover:text-lightgrey"
+                                activeTab === item.id ? "text-primary" : "text-light-5 dark:text-lightgrey"
                             }`}
                         >
                             {item.title}
@@ -22,6 +27,7 @@ export default function MobileNav({ activeTab, setActiveTab }: { activeTab: stri
                     </li>
                 ))}
             </ul>
+
         </nav>
     );
 }
