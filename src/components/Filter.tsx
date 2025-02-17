@@ -13,13 +13,13 @@ const Filter: React.FC<FilterProps> = ({ tagList, activeTag, handleTag }) => {
 
     return (
         <div className="w-full flex flex-col">
-            <div className="hidden md:flex gap-8 flex-wrap">
+            <div className="hidden md:flex gap-x-8 gap-y- flex-wrap">
                 {tagList.map((tag) => (
                     <button
                         key={tag}
                         onClick={() => handleTag(tag)}
                         className={clsx(
-                            "py-2 cursor-pointer transition-all ",
+                            "cursor-pointer transition-all",
                             activeTag === tag
                                 ? "text-light-5 font-medium font-semibold"
                                 : "text-light-4 hover:text-light-5 dark:hover:text-dark-5 dark:text-white font-medium"

@@ -77,7 +77,7 @@ export default function Project() {
         <div className="flex flex-col md:gap-0 gap-4">
             <Filter tagList={tagList} activeTag={activeTag} handleTag={handleTag} />
 
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-col gap-x-8 gap-y-4 pt-4">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 flex-col gap-x-8 gap-y-4 pt-4 mt-4">
                 {filteredList.length > 0 ? (
                     filteredList.map((project) => (
                         <Dialog key={project.title}>
@@ -105,7 +105,7 @@ export default function Project() {
                                         </div>
                                     </div>
                                     <div className="py-3 px-2 flex flex-col justify-start items-start transition-colors duration-300 ease-in-out rounded-b-2xl">
-                                        <h2 className="text-md font-semibold text-light-3 dark:text-dark-3">{project.title}</h2>
+                                        <span className="text-md font-semibold text-light-3 dark:text-dark-3">{project.title}</span>
                                     </div>
                                 </div>
                             </DialogTrigger>
@@ -119,13 +119,13 @@ export default function Project() {
                                             height={50}
                                             className="rounded-3xl w-full object-cover rounded-b-3xl"
                                         />
-                                        <div className="flex gap-2 mt-2 absolute z-10 top-0 right-12 flex-wrap ml-4">
+                                        <span className="flex gap-2 mt-2 absolute z-10 top-0 right-12 flex-wrap ml-4">
                                             {project.type.map((type) => (
                                                 <span key={type} className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type] || "bg-gray-500"}`}>
                                                     {type}
                                                 </span>
                                             ))}
-                                        </div>
+                                        </span>
                                         <span className="flex flex-col gap-8 items-start px-4 pt-8">
                                             <DialogTitle className="text-light-4 dark:text-dark-3 text-2xl">{project.title}</DialogTitle>
                                             <DialogDescription>

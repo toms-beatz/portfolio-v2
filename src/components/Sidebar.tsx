@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Cake, Github, Linkedin, Mail, MapPin, Minus, Plus, Smartphone} from "lucide-react";
+import {Cake, Github, Linkedin, Mail, MapPin, Smartphone, ChevronUp, ChevronDown} from "lucide-react";
 import Link from "next/link";
 import {useState} from "react";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -25,21 +25,21 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
             <section
                 className="relative flex flex-col md:top-0 top-14 lg:items-center max-h-full !h-full mb-0 lg:pt-14 lg:pb-7 lg:px-7 p-7 bg-light-2 dark:bg-dark-2 rounded-2xl lg:max-w-[275px] w-full">
                 <div
-                    className="lg:hidden absolute top-0 right-0 flex gap-4 items-center justify-center p-2 rounded-bl-2xl rounded-tr-[0.90rem] bg-light-3 dark:bg-dark-3 text-lightgrey"
+                    className="lg:hidden absolute top-0 right-0 flex gap-4 items-center justify-center p-2 rounded-bl-2xl rounded-tr-[0.90rem] dark:bg-dark-4/20 bg-light-1 border-2 dark:bordr- border-light-2 dark:border-dark-4/20 text-lightgrey"
                 >
                     <ThemeProvider/>
                     <button
                         onClick={handleDropdownToggle}
                     >
                         {isDropdownVisible ?
-                            //<ChevronUp className="text-primary"/>
+                            <ChevronUp className="text-light-4 dark:text-light-4"/>
 
-                            <Minus className="text-primary"/>
+                            //<Minus className="text-primary"/>
 
 
                             :
-                            //<ChevronDown className="text-primary"/>
-                            <Plus className="text-primary"/>
+                            <ChevronDown className="text-light-4 dark:text-light-4"/>
+                            //<Plus className="text-primary"/>
                         }
                     </button>
                 </div>

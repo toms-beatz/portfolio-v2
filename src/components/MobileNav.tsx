@@ -11,7 +11,7 @@ export default function MobileNav({activeTab, setActiveTab}: {
 }) {
     return (
         <nav
-            className="h-16 border border-light-3 dark:border-border rounded-t-2xl xl:hidden flex items-center w-full justify-center fixed bottom-0 left-0 backdrop-blur-xl bg-light-2 dark:bg-dark-5">
+            className="z-20 h-16 rounded-t-2xl xl:hidden flex items-center w-full justify-center fixed bottom-0 left-0 bg-light-4/20 dark:bg-dark-4/50 backdrop-blur-3xl">
 
             <ul className="flex lg:gap-12 sm:gap-8 gap-4 px-5 justy-center items-center">
                 {navItems.map((item) => (
@@ -19,7 +19,7 @@ export default function MobileNav({activeTab, setActiveTab}: {
                         <button
                             onClick={() => setActiveTab(item.id)}
                             className={`font-semibold transition-colors text-sm md:text-base ${
-                                activeTab === item.id ? "text-primary" : "text-light-5 dark:text-lightgrey"
+                                activeTab === item.id ? "dark:text-dark-3 text-light-5" : "dark:text-white text-light-4"
                             }`}
                         >
                             {item.title}

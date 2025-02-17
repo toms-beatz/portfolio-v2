@@ -84,16 +84,17 @@ export default function About() {
                         </DialogTrigger>
 
                         <DialogContent
-                            className="[&>button]:hidden flex flex-col gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl bg-light-1 dark:bg-dark-3/20">
+                            className="ring-0 ring-offset-0 [&>button]:hidden flex flex-col gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl border-0 bg-light-1 dark:bg-dark-3/20 backdrop-blur-md">
                             <DialogHeader>
                                 <span
-                                    className="absolute top-0 left-0 bg-light-3 dark:bg-dark-2 rounded-2xl translate-x-[20px] -translate-y-[30px]">
+                                    className="absolute top-0 left-0 bg-light-3/50 dark:bg-dark-3/90 backdrop-blur-3xl rounded-2xl translate-x-[20px] -translate-y-[30px]">
                                     <Image src="/yan.png" alt="profile" width={80} height={80} className=""/>
                                 </span>
-                                <DialogTitle className="text-center text-white lg:-ml-20 md:ml-2 ml-20">Yan
-                                    Bourquard-Ania</DialogTitle>
+                                <DialogTitle className="text-center dark:text-dark-3 text-light-3 lg:-ml-20 md:ml-2 ml-20">
+                                    Yan Bourquard-Ania
+                                </DialogTitle>
                                 <DialogDescription className="!mt-6">
-                                    <span className="text-light-4 dark:text-white !text-left md:text-base text-sm">
+                                    <span className="text-light-3 dark:text-white !text-left md:text-base text-sm">
                                         « Thomas est un jeune développeur web sérieux.
                                         Je peux attester de ses compétences en Node.js et PHP pour le backend,
                                         ainsi qu’en React.js pour le frontend.
@@ -127,17 +128,17 @@ export default function About() {
                         </DialogTrigger>
 
                         <DialogContent
-                            className="[&>button]:hidden flex flex-col gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl bg-light-1 dark:bg-dark-3">
+                            className="[&>button]:hidden flex flex-col gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl border-0 bg-light-1 dark:bg-dark-3/20 backdrop-blur-md">
                             <DialogHeader>
                                 <span
-                                    className="absolute top-0 left-0 bg-light-2 dark:bg-dark-2 rounded-2xl translate-x-[20px] -translate-y-[30px]">
-                                    <Image src="/yan.png" alt="profile" width={80} height={80} className=""/>
+                                    className="absolute top-0 left-0 bg-light-3/50 dark:bg-dark-3/90 backdrop-blur-3xl rounded-2xl translate-x-[20px] -translate-y-[30px]">
+                                    <Image src="/fred.png" alt="profile" width={80} height={80} className=""/>
                                 </span>
-                                <DialogTitle className="text-center text-white lg:-ml-20 md:ml-2 ml-20">
+                                <DialogTitle className="text-center dark:text-dark-3 text-light-3 lg:-ml-20 md:ml-2 ml-20">
                                     Quentin Wavelet
                                 </DialogTitle>
                                 <DialogDescription className="!mt-6">
-                                    <span className="text-light-4 dark:text-white !text-left md:text-base text-sm">
+                                    <span className="text-light-3 dark:text-white !text-left md:text-base text-sm">
                                         « Thomas a brillamment atteint les objectifs fixés en amont.
                                         Il a parfaitement su s&apos;adapter au fonctionnement quelque peu différent
                                         de notre association. »
