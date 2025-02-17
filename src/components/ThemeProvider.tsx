@@ -9,7 +9,6 @@ export default function ThemeProvider() {
     useEffect(() => {
         if (typeof window !== "undefined") {
             const savedTheme = localStorage.getItem("theme");
-            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
             if (savedTheme) {
                 setTheme(savedTheme as "light" | "dark");
