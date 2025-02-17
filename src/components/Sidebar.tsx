@@ -2,7 +2,6 @@ import Image from "next/image";
 import {Cake, Github, Linkedin, Mail, MapPin, Minus, Plus, Smartphone} from "lucide-react";
 import Link from "next/link";
 import {useState} from "react";
-import ThemeProvider from "@/components/ThemeProvider";
 
 
 export default function Sidebar({activeTab}: { activeTab: string }) {
