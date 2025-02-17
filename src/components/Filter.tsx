@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
-import {ChevronDown, ChevronUp} from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FilterProps {
     tagList: string[];
@@ -8,12 +8,11 @@ interface FilterProps {
     handleTag: (tag: string) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({tagList, activeTag, handleTag}) => {
+const Filter: React.FC<FilterProps> = ({ tagList, activeTag, handleTag }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="w-full flex flex-col">
-            {/* Visible on larger screens */}
             <div className="hidden md:flex gap-8 flex-wrap">
                 {tagList.map((tag) => (
                     <button
@@ -32,14 +31,12 @@ const Filter: React.FC<FilterProps> = ({tagList, activeTag, handleTag}) => {
             </div>
 
             <div className="md:hidden relative w-full">
-                {/* Select Input */}
                 <select
                     value={activeTag}
-                    autoFocus={false}
                     onChange={(e) => handleTag(e.target.value)}
-                    onFocus={() => setIsOpen(true)} // Dropdown open
-                    onBlur={() => setIsOpen(false)} // Dropdown close
-                    className="w-full px-5 py-4 rounded-xl bg-transparent text-light-4 dark:text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offest-0"
+                    onFocus={() => setIsOpen(true)}
+                    onBlur={() => setIsOpen(false)}
+                    className="w-full px-5 py-4 rounded-xl bg-transparent text-light-4 dark:text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offset-0"
                 >
                     {tagList.map((tag) => (
                         <option key={tag} value={tag}>
@@ -48,16 +45,8 @@ const Filter: React.FC<FilterProps> = ({tagList, activeTag, handleTag}) => {
                     ))}
                 </select>
 
-                {/* Chevron Icon */}
-                <span
-                    className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500 transition-transform duration-300"
-                >
-                    {isOpen ?
-
-                        <ChevronUp height={18} width={18}/>
-                        :
-                        <ChevronDown height={18} width={18}/>
-                    }
+                <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-500 transition-transform duration-300">
+                    {isOpen ? <ChevronUp height={18} width={18} /> : <ChevronDown height={18} width={18} />}
                 </span>
             </div>
         </div>
