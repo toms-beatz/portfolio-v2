@@ -31,7 +31,7 @@ export default function About() {
                     <AppWindow height={50} width={50} className="text-primary w-1/4"/>
                     <div className="flex flex-col gap-2">
                         <h3 className="text-primary font-semibold">
-                            Développement d'applications web
+                            Développement d&apos;applications web
                         </h3>
                         <p className="text-light-4 dark:text-white text-sm">
                             Conception et développement d’applications web performantes et modernes.
@@ -45,7 +45,7 @@ export default function About() {
                     <TabletSmartphone height={50} width={50} className="text-primary w-1/4"/>
                     <div className="flex flex-col gap-2">
                         <h3 className="text-primary font-semibold">
-                            Développement d'applications mobiles
+                            Développement d&apos;applications mobiles
                         </h3>
                         <p className="text-light-4 dark:text-white text-sm">
                             Développement d’applications mobiles hybrides, avec une expérience fluide sur iOS et
