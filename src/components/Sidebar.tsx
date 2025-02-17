@@ -22,7 +22,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
     return (
         <>
             <section
-                className="relative flex flex-col lg:sticky top-14 lg:items-center max-h-full h-full mb-0 lg:pt-14 lg:pb-7 lg:px-7 p-7 bg-light-2 dark:bg-dark-2 rounded-2xl lg:max-w-[275px] w-full border-light-3 dark:border-border border">
+                className="relative flex flex-col   lg:items-center max-h-full !h-full mb-0 lg:pt-14 lg:pb-7 lg:px-7 p-7 bg-light-2 dark:bg-dark-2 rounded-2xl lg:max-w-[275px] w-full border-light-3 dark:border-border border">
                 <button
                     onClick={handleDropdownToggle}
                     className="lg:hidden absolute top-0 right-0 flex items-center justify-center p-1 rounded-bl-2xl rounded-tr-2xl border border-light-3 dark:border-border bg-light-1 dark:bg-dark-3 text-lightgrey"
