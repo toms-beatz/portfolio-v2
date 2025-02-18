@@ -1,6 +1,7 @@
 'use client';
 import Filter from "@/components/Filter";
-import {useCallback, useState} from "react";
+import { useCallback, useState, useEffect } from "react";
+import { getProjects } from "@/lib/queries";
 import Image from "next/image";
 import {
     Dialog,
@@ -11,22 +12,13 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
-import {VisuallyHidden} from "radix-ui";
-import {Eye, Github, SquareArrowOutUpRight, X} from "lucide-react";
+import { VisuallyHidden } from "radix-ui";
+import { Eye, Github, SquareArrowOutUpRight, X } from "lucide-react";
 import Link from "next/link";
 
-interface Project {
-    title: string;
-    desc: string;
-    img: string;
-    links?: {
-        direct?: string;
-        repo?: string;
-    };
-    type: string[];
-}
+type ProjectType = "Application Web" | "Application Mobile" | "Application Desktop" | "API" | "SaaS";
 
-const typeColors: Record<string, string> = {
+const typeColors: Record<ProjectType, string> = {
     "Application Web": "bg-light-3",
     "Application Mobile": "bg-light-4",
     "Application Desktop": "bg-light-5",
@@ -34,72 +26,34 @@ const typeColors: Record<string, string> = {
     "SaaS": "bg-dark-4",
 };
 
+interface Project {
+    title: string;
+    desc: string;
+    img: string;
+    links: {
+        direct?: string;
+        repo?: string;
+    };
+    type: string[];
+}
+
 export default function Project() {
     const tagList = ["Tout", "Application Web", "Application Mobile", "Application Desktop", "API", "SaaS"];
-    const data: Project[] = [
-        {
-            title: "Kouiz Mobile",
-            desc: "Application mobile pour quiz interactifs.",
-            img: "/projects/kouiz-mobile.png",
-            links: {repo: "https://github.com/toms-beatz/kouiz-mobile"},
-            type: ["Application Mobile"],
-        },
-        {
-            title: "Kouiz Desktop",
-            desc: "Version desktop de Kouiz avec des fonctionnalités avancées.",
-            img: "/projects/kouiz-desktop.png",
-            links: {repo: "https://github.com/toms-beatz/kouiz-desktop"},
-            type: ["Application Desktop"],
-        },
-        {
-            title: "Kouiz Web",
-            desc: "Interface web de Kouiz, accessible via navigateur.",
-            img: "/projects/kouiz.png",
-            links: {direct: "https://kouiz.vercel.app", repo: "https://github.com/toms-beatz/kouiz"},
-            type: ["Application Web"],
-        },
-        {
-            title: "Portfolio v0 Thomasgram",
-            desc: "Premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio premier portfolio",
-            img: "/projects/thomasgram.png",
-            links: {
-                direct: "https://archive.thomas-mazeau.com",
-                repo: "https://github.com/toms-beatz/portfolio-thomasgram"
-            },
-            type: ["Application Web"],
-        },
-        {
-            title: "Caramblagues",
-            desc: "Test API",
-            img: "/projects/caramblagues.png",
-            links: {repo: "https://github.com/toms-beatz/caramblagues"},
-            type: ["Application Web"],
-        },
-        {
-            title: "CV HTML",
-            desc: "CV en HTML/CSS",
-            img: "/projects/cv-html.png",
-            links: {repo: "https://github.com/toms-beatz/cv-html"},
-            type: ["Application Web"],
-        },
-        {
-            title: "Portfolio v1",
-            desc: "Deuxième portfolio",
-            img: "/projects/portfolio-v1.png",
-            links: {repo: "https://github.com/toms-beatz/portfolio"},
-            type: ["Application Web"],
-        },
-        {
-            title: "Rapport de stage web",
-            desc: "Rapport de stage web",
-            img: "/projects/rapport-stage.png",
-            links: {direct: "https://archive.thomas-mazeau.com/projects/stage/"},
-            type: ["Application Web"],
-        },
-
-    ];
-
     const [activeTag, setActiveTag] = useState("Tout");
+    const [projects, setProjects] = useState<Project[]>([]);
+
+
+    useEffect(() => {
+        // Appel de la fonction getProjects et gestion des erreurs
+        getProjects()
+            .then((data) => {
+                console.log("Données récupérées :", data);  // Vérification des données récupérées
+                setProjects(data.result);
+            })
+            .catch((error) => {
+                console.error("Erreur de récupération des projets:", error);  // Gestion de l'erreur
+            });
+    }, []);
 
     const filterTags = (array: Project[]): Project[] => {
         if (activeTag === "Tout") {
@@ -109,7 +63,7 @@ export default function Project() {
         }
     };
 
-    const filteredList = filterTags(data);
+    const filteredList = filterTags(projects);
 
     const handleTag = useCallback((tag: string) => {
         setActiveTag(tag);
@@ -117,7 +71,7 @@ export default function Project() {
 
     return (
         <div className="flex flex-col md:gap-0 gap-4">
-            <Filter tagList={tagList} activeTag={activeTag} handleTag={handleTag}/>
+            <Filter tagList={tagList} activeTag={activeTag} handleTag={handleTag} />
 
             <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 flex-col gap-x-8 gap-y-4 pt-4 mt-4">
                 {filteredList.length > 0 ? (
@@ -132,7 +86,7 @@ export default function Project() {
                                             <div
                                                 className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
                                                 <Eye
-                                                    className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white"/>
+                                                    className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white" />
                                             </div>
                                             {project.links &&
                                                 project.links.direct &&
@@ -140,7 +94,7 @@ export default function Project() {
                                                     <div
                                                         className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
                                                         <SquareArrowOutUpRight
-                                                            className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white"/>
+                                                            className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white" />
                                                     </div>
                                                 </Link>
                                             }
@@ -149,7 +103,7 @@ export default function Project() {
                                                     <div
                                                         className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
                                                         <Github
-                                                            className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white"/>
+                                                            className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white" />
                                                     </div>
                                                 </Link>
                                             }
@@ -165,7 +119,7 @@ export default function Project() {
                                         <div className="flex gap-2 mt-2 absolute z-10 top-0 right-2 flex-wrap ml-4">
                                             {project.type.map((type) => (
                                                 <span key={type}
-                                                      className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type] || "bg-gray-500"}`}>
+                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type as ProjectType] || "bg-gray-500"}`}>
                                                     {type}
                                                 </span>
                                             ))}
@@ -199,51 +153,51 @@ export default function Project() {
                                         <span className="flex gap-2 mt-2 absolute z-10 top-0 right-12 flex-wrap ml-4">
                                             {project.type.map((type) => (
                                                 <span key={type}
-                                                      className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type] || "bg-gray-500"}`}>
+                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type as ProjectType] || "bg-gray-500"}`}>
                                                     {type}
                                                 </span>
                                             ))}
                                         </span>
                                         <span className="flex flex-col gap-8 items-start px-4 pt-4">
-                                           <span className="flex xl:flex-row flex-col xl:items-center w-full xl:justify-between xl:gap-0 gap-8">
+                                            <span className="flex xl:flex-row flex-col xl:items-center w-full xl:justify-between xl:gap-0 gap-8">
                                                 <span className="flex flex-col gap-4 xl:!w-8/12 w-full">
                                                     <span
                                                         className="text-left text-light-4 dark:text-dark-3 xl:text-3xl text-2xl font-heading">
-                                                    {project.title}
+                                                        {project.title}
                                                     </span>
                                                     <span
-                                                           className="text-light-2 dark:text-white !text-left md:text-base text-sm">
-                                                           {project.desc}
+                                                        className="text-light-2 dark:text-white !text-left md:text-base text-sm">
+                                                        {project.desc}
                                                     </span>
                                                 </span>
-                                               <span className="flex flex-col gap-4">
-                                                   {project.links && project.links.direct &&
-                                                       <span
-                                                           className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
-                                                           <Link href={project.links.direct} target="_blank">
-                                                               Voir le projet
-                                                           </Link>
-                                                           <SquareArrowOutUpRight className="h-4 w-4"/>
-                                                       </span>
-                                                   }
-                                                   {project.links && project.links.repo &&
-                                                       <span
-                                                           className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
-                                                           <Link href={project.links.repo} target="_blank">
-                                                               Voir le repo
-                                                           </Link>
-                                                           <Github className="h-4 w-4"/>
-                                                       </span>
-                                                   }
-                                               </span>
-                                           </span>
+                                                <span className="flex flex-col gap-4">
+                                                    {project.links && project.links.direct &&
+                                                        <span
+                                                            className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
+                                                            <Link href={project.links.direct} target="_blank">
+                                                                Voir le projet
+                                                            </Link>
+                                                            <SquareArrowOutUpRight className="h-4 w-4" />
+                                                        </span>
+                                                    }
+                                                    {project.links && project.links.repo &&
+                                                        <span
+                                                            className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
+                                                            <Link href={project.links.repo} target="_blank">
+                                                                Voir le repo
+                                                            </Link>
+                                                            <Github className="h-4 w-4" />
+                                                        </span>
+                                                    }
+                                                </span>
+                                            </span>
 
 
-                                    </span>
+                                        </span>
                                     </DialogDescription>
                                 </DialogHeader>
                                 <DialogClose asChild className="absolute top-2 right-2">
-                                    <X className="text-light-3 w-6 h-6 cursor-pointer bg-light-1 backdrop-blur-lg rounded-lg border"/>
+                                    <X className="text-light-3 w-6 h-6 cursor-pointer bg-light-1 backdrop-blur-lg rounded-lg border" />
                                 </DialogClose>
                             </DialogContent>
                         </Dialog>

@@ -35,7 +35,7 @@ export default function Contact() {
                         autoCapitalize="off"
                         spellCheck="false"
                         required
-                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent text-white focus-visible:ring-0 focus-visible:ring-offest-0"
+                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 text-light-3 focus-visible:ring-0 focus-visible:ring-offest-0"
                         {...register('name', {required: true})}
                     />
                     <input
@@ -48,14 +48,14 @@ export default function Contact() {
                         title="Please enter a valid email address"
                         required
                         inputMode="email"
-                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 focus-visible:ring-0 focus-visible:ring-offest-0"
+                        className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 text-light-3 focus-visible:ring-0 focus-visible:ring-offest-0"
                         {...register('email', {required: true})}
                     />
                 </div>
 
                 <textarea
                     placeholder="Message"
-                    className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 focus-visible:ring-0 focus-visible:ring-offest-0"
+                    className="!bg-light-1 dark:!bg-dark-1 w-full px-5 py-4 rounded-xl bg-transparent dark:text-dark-3 text-light-3 focus-visible:ring-0 focus-visible:ring-offest-0"
                     rows={10}
                     {...register('message', {required: true})}
                 />
