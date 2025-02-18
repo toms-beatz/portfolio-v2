@@ -36,7 +36,7 @@ const Filter: React.FC<FilterProps> = ({ tagList, activeTag, handleTag }) => {
                     onChange={(e) => handleTag(e.target.value)}
                     onFocus={() => setIsOpen(true)}
                     onBlur={() => setIsOpen(false)}
-                    className="w-full px-5 py-4 rounded-xl bg-transparent text-light-4 dark:text-white border border-light-3 dark:border-border focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="w-full px-5 py-4 rounded-xl bg-light-1 dark:bg-dark-1 text-light-4 dark:text-white focus-visible:ring-0 focus-visible:ring-offset-0"
                 >
                     {tagList.map((tag) => (
                         <option key={tag} value={tag}>

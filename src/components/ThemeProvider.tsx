@@ -35,7 +35,7 @@ export default function ThemeProvider() {
     return (
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex justify-center items-center transition rounded text-light-4 dark:text-light-4"
+            className="flex justify-center items-center transition rounded text-light-4 dark:text-light-4 hover:text-light-3 dark:hover:text-lightgrey"
         >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>

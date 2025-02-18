@@ -30,7 +30,7 @@ export default function About() {
             <div className="grid xl:grid-cols-2 gap-y-8 gap-x-6">
                 <div
                     className="flex flex-row gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl dark:-dark-2 bg-light-1 dark:bg-dark-4/20">
-                    <AppWindow height={50} width={50} className="text-dark-3 w-1/4"/>
+                    <AppWindow height={50} width={50} className="text-dark-3 sm:w-1/4 w-6/12"/>
                     <div className="flex flex-col gap-2">
                         <h3 className="dark:text-dark-3 text-light-3 font-semibold">
                             Développement d&apos;applications web
@@ -44,7 +44,7 @@ export default function About() {
 
                 <div
                     className="flex flex-row gap-8 lg:justify-center items-center p-4 before:content-[''] before:absolute before:[-radius:inherit] rounded-xl dark:-dark-2 bg-light-1 dark:bg-dark-4/20">
-                    <TabletSmartphone height={50} width={50} className="text-dark-3 w-1/4"/>
+                    <TabletSmartphone height={50} width={50} className="text-dark-3 sm:w-1/4 w-6/12"/>
                     <div className="flex flex-col gap-2">
                         <h3 className="dark:text-dark-3 text-light-3 font-semibold">
                             Développement d&apos;applications mobiles

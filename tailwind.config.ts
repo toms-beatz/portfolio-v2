@@ -36,8 +36,8 @@ export default {
         },
 
         fontFamily: {
-            heading: ['var(--font-freeman)'],
-            body: 'Noto Traditional Nushu',
+            heading: 'Freeman',
+            body: 'Jost',
         },
         fontWeight: {
             normal: '400',

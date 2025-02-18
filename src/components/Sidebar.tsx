@@ -68,7 +68,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                             <div className="flex flex-col gap-0.5">
                                 <h2 className="text-xs text-light-3 dark:text-lightgrey">EMAIL</h2>
                                 <Link href="mailto:thomas.mazeau@icloud.com"><p
-                                    className="text-sm text-light-4 dark:text-white">thomas.mazeau@icloud.com</p></Link>
+                                    className="text-sm text-light-4 dark:text-white hover:text-light-3 dark:hover:text-dark-4">thomas.mazeau@icloud.com</p></Link>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -78,7 +78,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                             </div>
                             <div className="flex flex-col gap-0.5">
                                 <h2 className="text-xs text-light-3 dark:text-lightgrey">TÉLÉPHONE</h2>
-                                <Link href="tel:0615945951"><p className="text-sm text-light-4 dark:text-white">+33 6 15
+                                <Link href="tel:0615945951"><p className="text-sm text-light-4 dark:text-white hover:text-light-3 dark:hover:text-dark-4">+33 6 15
                                     94 59 51</p>
                                 </Link>
                             </div>
@@ -108,11 +108,11 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                     </div>
                     <div className="flex lg:mt-8 mt-4 gap-4 lg:justify-center">
                         <Link target="_blank" href="https://github.com/toms-beatz"><Github width={20} height={20}
-                                                                                           className="dark:text-lightgrey text-light-4"/></Link>
+                                                                                           className="dark:text-lightgrey text-light-4 hover:text-light-3 dark:hover:text-dark-4"/></Link>
                         <Link target="_blank" href="https://www.linkedin.com/in/thomas-mazeau-611481204"><Linkedin
                             width={20}
                             height={20}
-                            className="dark:text-lightgrey text-light-4"/></Link>
+                            className="dark:text-lightgrey text-light-4 hover:text-light-3 dark:hover:text-dark-4"/></Link>
                     </div>
                 </div>
 
