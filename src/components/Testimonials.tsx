@@ -13,8 +13,6 @@ import {
 
 import { X } from "lucide-react"
 import { useState, useEffect } from "react";
-import test from 'node:test';
-import { truncate } from 'fs';
 
 interface Testimonial {
     name: string;
