@@ -7,9 +7,6 @@ WORKDIR /app
 # Copy the contents of the src directory to the working directory
 COPY ./src /app/src
 
-#Copie du projet react
-COPY . .
-
 #Installation des dépendances pour réact
 #Exposition du port 3000
 EXPOSE 3000
