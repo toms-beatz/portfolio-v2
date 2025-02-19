@@ -73,11 +73,11 @@ export default function Project() {
     return (
         <div className="flex flex-col md:gap-0 gap-4">
             
-            <AlertstoUsers 
+            {/* <AlertstoUsers 
                 title="Mise à jour en cours" 
                 desc="Page en cours de mise à jour, il est possible que certains projets ne soient pas affichés."
                 type="warning"
-            />
+            /> */}
 
             <Filter tagList={tagList} activeTag={activeTag} handleTag={handleTag} />
 
