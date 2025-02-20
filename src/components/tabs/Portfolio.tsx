@@ -17,14 +17,13 @@ import { Eye, Github, SquareArrowOutUpRight, X } from "lucide-react";
 import Link from "next/link";
 import AlertstoUsers from "../AlertstoUsers";
 
-type ProjectType = "Application Web" | "Application Mobile" | "Application Desktop" | "API" | "SaaS";
+type ProjectType = "Application Web" | "Application Mobile" | "Application Desktop" | "API";
 
 const typeColors: Record<ProjectType, string> = {
     "Application Web": "bg-light-3",
     "Application Mobile": "bg-light-4",
     "Application Desktop": "bg-light-5",
     "API": "bg-dark-3",
-    "SaaS": "bg-dark-4",
 };
 
 export interface Project {
@@ -38,7 +37,7 @@ export interface Project {
 }
 
 export default function Project() {
-    const tagList = ["Tout", "Application Web", "Application Mobile", "Application Desktop", "API", "SaaS"];
+    const tagList = ["Tout", "Application Web", "Application Mobile", "Application Desktop", "API"];
     const [activeTag, setActiveTag] = useState("Tout");
     const [projects, setProjects] = useState<Project[]>([]);
     const [currentPage, setCurrentPage] = useState(1);  // Page actuelle
