@@ -3,7 +3,8 @@ import { Cake, Github, Linkedin, Mail, MapPin, Smartphone, ChevronUp, ChevronDow
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ThemeProvider from '@/components/ThemeProvider';
-import { getSidebarData } from '@/lib/queries';
+import { getSidebarData } from '@/app/api/sidebar/getSidebarData';
+import { formatDate } from '@/lib/utils';
 
 interface SidebarData {
     email: string;
@@ -13,23 +14,25 @@ interface SidebarData {
     github: string;
     linkedin: string;
     job: string,
+    activeTabImages: {name: string, url: any}[];
 }
+const imageMapping: Record<string, string> = {
+    "About": "avatar-about.png",
+    "Resume": "avatar-resume.png",
+    "Portfolio": "avatar-portfolio.png",
+    "Contact": "avatar-contact.png"
+};
 
 export default function Sidebar({activeTab}: { activeTab: string }) {
     const [sidebarData, setSidebarData] = useState<SidebarData | null>(null);
-    const avatarImages: { [key: string]: string } = {
-        About: "/avatar-about.png",
-        Resume: "/avatar-resume.png",
-        Contact: "/avatar-contact.png",
-        Portfolio: "/avatar-portfolio.png",
-    };
+    const avatarSrc = sidebarData?.activeTabImages.find((image) => image.name === imageMapping[activeTab])?.url;
 
-    const avatarSrc = avatarImages[activeTab] || "/my-avatar.png";
+    
     useEffect(() => {
         getSidebarData()
             .then((data) => {
                 console.log("Données récupérées :", data);  
-                setSidebarData(data.result); // Ensure we access the first item of the array
+                setSidebarData(data); 
             })
             .catch((error) => {
                 console.error("Erreur de récupération des projets:", error);  
@@ -61,7 +64,7 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
 
                 <div className="flex lg:justify-center lg:flex-col lg:items-center gap-8">
                     <div className="flex flex-col items-center justify-center bg-light-1 dark:bg-dark-4/30 rounded-full lg:w-32 lg:h-32 py-2 px-4 md:py-4 md:px-6 lg:py-2 lg:px-4">
-                        {avatarSrc && <Image src={avatarSrc} alt="my-avatar" width={80} height={80} />}
+                        {avatarSrc && <Image src={process.env.NEXT_PUBLIC_STRAPI_API_URL + avatarSrc} alt="my-avatar" width={80} height={80} />}
                     </div>
                     <div className="flex flex-col lg:items-center justify-center">
                         <h1 className="md:text-2xl text-lg font-semibold my-4 text-light-3 dark:text-dark-3">Thomas Mazeau</h1>
@@ -108,8 +111,8 @@ export default function Sidebar({activeTab}: { activeTab: string }) {
                                 <Cake height={18} width={18} className="text-dark-3" />
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <h2 className="text-xs text-light-3 dark:text-lightgrey">BIRTHDAY</h2>
-                                <p className="text-sm text-light-4 dark:text-white">{sidebarData.birthday}</p>
+                                <h2 className="text-xs text-light-3 dark:text-lightgrey">ANNIVERSAIRE</h2>
+                                <p className="text-sm text-light-4 dark:text-white">{ formatDate(sidebarData.birthday) }</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">

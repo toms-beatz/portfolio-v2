@@ -1,24 +1,24 @@
 "use client";
 import { AppWindow, TabletSmartphone } from "lucide-react"
 import Testimonials from "../Testimonials";
-import { getAboutDesc } from "@/lib/queries";
 import { useState, useEffect } from "react";
+import {getAboutPageData} from "@/app/api/about/getAboutPageData";
 
-
-
+interface AboutPageData {
+    description: string;
+}
 
 export default function About() {
-    const [aboutDesc, setAboutDesc] = useState<string[]>([]);
+    const [aboutDesc, setAboutDesc] = useState<AboutPageData["description"]>("");
 
     useEffect(() => {
-        // Appel de la fonction getProjects et gestion des erreurs
-        getAboutDesc()
+        getAboutPageData()
             .then((data) => {
-                console.log("Données récupérées :", data);  // Vérification des données récupérées
-                setAboutDesc(data.result['desc']);
+                console.log("Données récupérées :", data);  
+                setAboutDesc(data.description);
             })
             .catch((error) => {
-                console.error("Erreur de récupération des projets:", error);  // Gestion de l'erreur
+                console.error("Erreur de récupération des projets:", error);  
             });
     }, []);
     return (

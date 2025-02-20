@@ -1,7 +1,8 @@
 'use client';
 import Filter from "@/components/Filter";
 import { useCallback, useState, useEffect } from "react";
-import { getProjects } from "@/lib/queries";
+// import { getProjects } from "@/lib/queries";
+import { getProjects } from "@/app/api/projects/getProjects";
 import Image from "next/image";
 import {
     Dialog,
@@ -27,15 +28,25 @@ const typeColors: Record<ProjectType, string> = {
     "SaaS": "bg-dark-4",
 };
 
-interface Project {
+// interface Project {
+//     title: string;
+//     desc: string;
+//     img: string;
+//     links: {
+//         direct?: string;
+//         repo?: string;
+//     };
+//     type: string[];
+// }
+
+export interface Project {
+    id: string;
     title: string;
-    desc: string;
-    img: string;
-    links: {
-        direct?: string;
-        repo?: string;
-    };
-    type: string[];
+    description: string;
+    image: any;
+    direct_link: string;
+    github_link: string;
+    project_categories: Array<{ name: string }>;
 }
 
 export default function Project() {
@@ -49,7 +60,7 @@ export default function Project() {
         getProjects()
             .then((data) => {
                 console.log("Données récupérées :", data);  // Vérification des données récupérées
-                setProjects(data.result);
+                setProjects(data);
             })
             .catch((error) => {
                 console.error("Erreur de récupération des projets:", error);  // Gestion de l'erreur
@@ -60,10 +71,9 @@ export default function Project() {
         if (activeTag === "Tout") {
             return array;
         } else {
-            return array.filter((el) => el.type.includes(activeTag));
+            return array.filter((el) => el.project_categories.some(category => category.name === activeTag));
         }
     };
-
     const filteredList = filterTags(projects);
 
     const handleTag = useCallback((tag: string) => {
@@ -72,9 +82,9 @@ export default function Project() {
 
     return (
         <div className="flex flex-col md:gap-0 gap-4">
-            
-            <AlertstoUsers 
-                title="Mise à jour en cours" 
+
+            <AlertstoUsers
+                title="Mise à jour en cours"
                 desc="Page en cours de mise à jour, il est possible que certains projets ne soient pas affichés."
                 type="warning"
             />
@@ -96,9 +106,8 @@ export default function Project() {
                                                 <Eye
                                                     className="text-light-4 dark:text-dark-4 w-8 h-8 hover:text-light-3 dark:hover:text-white" />
                                             </div>
-                                            {project.links &&
-                                                project.links.direct &&
-                                                <Link href={project.links.direct} target="_blank">
+                                            {project.direct_link &&
+                                                <Link href={project.direct_link} target="_blank">
                                                     <div
                                                         className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
                                                         <SquareArrowOutUpRight
@@ -106,8 +115,8 @@ export default function Project() {
                                                     </div>
                                                 </Link>
                                             }
-                                            {project.links && project.links.repo &&
-                                                <Link href={project.links.repo} target="_blank">
+                                            {project.github_link &&
+                                                <Link href={project.github_link} target="_blank">
                                                     <div
                                                         className="flex flex-row gap-6 lg:justify-center items-center p-2 bg-light-1 dark:bg-dark-3 before:content-[''] before:absolute before:[border-radius:inherit] rounded-xl">
                                                         <Github
@@ -118,17 +127,17 @@ export default function Project() {
 
                                         </div>
                                         <Image
-                                            src={project.img}
+                                            src={process.env.NEXT_PUBLIC_STRAPI_API_URL + project.image.url}
                                             alt={project.title}
-                                            width={2879}
-                                            height={1566}
+                                            width={project.image.width}
+                                            height={project.image.height}
                                             className="rounded-2xl w-full h-60 object-fill bg-light-4 dark:bg-dark-3 transform transition-transform duration-500 ease-in-out group-hover:scale-110"
                                         />
                                         <div className="flex gap-2 mt-2 absolute z-10 top-0 right-2 flex-wrap ml-4">
-                                            {project.type.map((type) => (
-                                                <span key={type}
-                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type as ProjectType] || "bg-gray-500"}`}>
-                                                    {type}
+                                            {project.project_categories.map((category) => (
+                                                <span key={category.name}
+                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[category.name as ProjectType] || "bg-gray-500"}`}>
+                                                    {category.name}
                                                 </span>
                                             ))}
                                         </div>
@@ -152,17 +161,17 @@ export default function Project() {
 
                                     <DialogDescription className="flex flex-col justify-center gap-4">
                                         <Image
-                                            src={project.img}
+                                            src={process.env.NEXT_PUBLIC_STRAPI_API_URL + project.image.url}
                                             alt={project.title}
-                                            width={250}
-                                            height={50}
+                                            width={project.image.width}
+                                            height={project.image.height}
                                             className="rounded-3xl w-full object-cover rounded-b-3xl"
                                         />
                                         <span className="flex gap-2 mt-2 absolute z-10 top-0 right-12 flex-wrap ml-4">
-                                            {project.type.map((type) => (
-                                                <span key={type}
-                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[type as ProjectType] || "bg-gray-500"}`}>
-                                                    {type}
+                                            {project.project_categories.map((category) => (
+                                                <span key={category.name}
+                                                    className={`text-white px-3 py-1 text-xs rounded-full font-bold ${typeColors[category.name as ProjectType] || "bg-gray-500"}`}>
+                                                    {category.name}
                                                 </span>
                                             ))}
                                         </span>
@@ -175,23 +184,23 @@ export default function Project() {
                                                     </span>
                                                     <span
                                                         className="text-light-2 dark:text-white !text-left md:text-base text-sm">
-                                                        {project.desc}
+                                                        {project.description}
                                                     </span>
                                                 </span>
                                                 <span className="flex flex-col gap-4">
-                                                    {project.links && project.links.direct &&
+                                                    {project.direct_link &&
                                                         <span
                                                             className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
-                                                            <Link href={project.links.direct} target="_blank">
+                                                            <Link href={project.direct_link} target="_blank">
                                                                 Voir le projet
                                                             </Link>
                                                             <SquareArrowOutUpRight className="h-4 w-4" />
                                                         </span>
                                                     }
-                                                    {project.links && project.links.repo &&
+                                                    {project.github_link &&
                                                         <span
                                                             className="cursor-pointer flex w-full flex-row bg-light-4 hover:bg-light-5 text-light-2 rounded-full gap-2 justify-center items-center p-3">
-                                                            <Link href={project.links.repo} target="_blank">
+                                                            <Link href={project.github_link} target="_blank">
                                                                 Voir le repo
                                                             </Link>
                                                             <Github className="h-4 w-4" />
