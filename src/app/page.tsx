@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import TabContent from "../components/TabContent";
 import Sidebar from "../components/Sidebar";
@@ -17,6 +17,17 @@ export default function Home() {
     const [activeTab, setActiveTab] = useState("About"); // Default to "About"
 
     const activeTabData = navItems.find((item) => item.id === activeTab); // Find the active tab object
+
+    const hidePopup = () => {
+        const popup = document.querySelector("nextjs-portal");
+        if (popup) {
+            popup.classList.add("hidden");
+        }
+    };
+
+    useEffect(() => {
+        hidePopup();
+    }, []);
 
     return (
         <>
