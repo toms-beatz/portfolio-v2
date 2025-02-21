@@ -24,7 +24,7 @@ export default {
                     '2': '#ffffff',
                     '3': '#1e3276',
                     '4': '#6c87e0',
-                    '5': '#020203FF',
+                    '5': '#254ccb',
                 },
                 lightgrey: '#d6d6d6b3'
             },
