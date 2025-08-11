@@ -14,7 +14,7 @@ interface SidebarData {
     github: string;
     linkedin: string;
     job: string,
-    activeTabImages: {name: string, url: any}[];
+    activeTabImages: {name: string, url: string}[];
 }
 const imageMapping: Record<string, string> = {
     "About": "avatar-about.png",

@@ -17,7 +17,7 @@ import { useState, useEffect } from "react";
 interface Testimonial {
     name: string;
     desc: string;
-    img: any;
+    img: { url: string };
 }
 
 const Testimonials = () => {

@@ -15,7 +15,6 @@ import {
 import { VisuallyHidden } from "radix-ui";
 import { Eye, Github, SquareArrowOutUpRight, X } from "lucide-react";
 import Link from "next/link";
-import AlertstoUsers from "../AlertstoUsers";
 
 type ProjectType = "Application Web" | "Application Mobile" | "Application Desktop" | "API";
 
@@ -30,7 +29,11 @@ export interface Project {
     id: string;
     title: string;
     description: string;
-    image: any;
+    image: {
+        url: string;
+        width: number;
+        height: number;
+    };
     direct_link: string;
     github_link: string;
     project_categories: Array<{ name: string }>;
